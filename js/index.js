@@ -9,7 +9,7 @@ let copyright = document.createElement('p');
 copyright.innerHTML = `Asel Karagazieva ${thisYear}`;
 footer.appendChild(copyright);
 
-let skills=['JavaScript', 'HTML'];
+let skills=['JavaScript', 'HTML', 'GIT'];
 // console.log(skills);
 let skillsSection=document.getElementById('skills');
 let skillsList=document.querySelector('ul');
