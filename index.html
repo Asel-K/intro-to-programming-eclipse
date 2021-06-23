@@ -6,19 +6,40 @@
         <meta name="description" content="My Resume">
         <title>Developer Asel: Resume</title>
         <link rel="stylesheet" href="css/index.css">
-    </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+      </head>
     <body>
-        <h1>Asel Karagazieva</h1>
-        <section>
+       <!-- navigation bar  -->
+
+       <header class="main-header">
+		<h1 class="name"><a href="#">AS EL</a></h1>
+		<ul class="main-nav">
+			<li><a href="#about">about</a></li>
+			<li><a href="#experience">experience</a></li>
+			<li><a href="#skills">skills</a></li>
+			<li><a href="#contact">contact</a></li>
+		</ul>
+	</header><!--/.main-header-->   
+
+    <div class="banner">
+		<img class="logo" src="css/circle-cropped.png" alt="City">
+		<h1 class="headline">Hello! I am a life-long learner</h1>
+		<span class="tagline">and a beginner deveoper based in Austin, TX.</span>
+	</div><!--/.banner-->
+
+   
+        <section id="about">
         <h2>About</h2>
         <p>My name is Asel Karagazieva. I am mom of two toddlers and I am currently a student of Code the Dream.</p> 
         </section>
-        <section>
+        <section id="experience">
         <h2>Experience</h2>
-        <p class="job">Public Relations Manager at USAID Horizon Project in Kyrgyzstan </p>
-        <p class="job">Public Relations Specialist at USAID KAED Project in Kyrgyzstan </p>
-        <p class="job">Administrative Assistant at Save the Children International in Kyrgyzstan </p>
+        <p class="exp">Public Relations Manager at USAID Horizon Project in Kyrgyzstan </p>
+        <p class="exp">Public Relations Specialist at USAID KAED Project in Kyrgyzstan </p>
+        <p class="exp">Administrative Assistant at Save the Children International in Kyrgyzstan </p>
     </section>
+
     
     <section id="skills">
         <h2>Skills</h2>
@@ -26,12 +47,39 @@
             
         </ul>
     </section>
-    <section>
-        <h2>Connect</h2> 
-<ul>
-    <li>asel.karagazieva@gmail.com</li>
-    <li>https://github.com/Asel-K</li>
-</ul>
+    <section id="contact">
+        <h2>Contact</h2> 
+
+        <div class="wrapper">
+            
+            <a href="https://www.facebook.com/asel.samudin" target="_blank" class="icon facebook"> 
+               <div class="tooltip">
+                   Facebook 
+               </div>
+               <span><i class="fab fa-facebook-f"> </i> </span> 
+           </a>
+
+            <a href="https://www.instagram.com/le.sa_5/" target="_blank" class="icon instagram"> 
+               <div class="tooltip">
+                   Instagram 
+               </div>
+               <span><i class="fab fa-instagram"> </i> </span> 
+           </a>
+
+            <a href="https://github.com/Asel-K" target="_blank" class="icon github"> 
+                <div class="tooltip">
+                    Github 
+                </div>
+                <span><i class="fab fa-github"> </i> </span> 
+            </a>
+
+            <div class="icon">
+               <div class="tooltip">
+                  asel.karagazieva@gmail.com
+               </div>
+               <span><i class="far fa-envelope"></i></span>
+            </div>
+         </div>
 </section>
 
  <section>
@@ -52,12 +100,12 @@
      <ul>
          
      </ul>
-
  </section>
 
 
+ <footer class="main-footer">
 
-<footer></footer>
+</footer>
 <script src = 'js/index.js'></script>
 </body>
 </html>

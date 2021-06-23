@@ -6,7 +6,7 @@ let footer=document.querySelector('footer');
 
 let copyright = document.createElement('p');
 
-copyright.innerHTML = `Asel Karagazieva ${thisYear}`;
+copyright.innerHTML = `&copy; ${thisYear} Asel Karagazieva`;
 footer.appendChild(copyright);
 
 let skills=['JavaScript', 'HTML', 'GIT'];
