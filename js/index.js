@@ -9,7 +9,7 @@ let copyright = document.createElement('p');
 copyright.innerHTML = `&copy; ${thisYear} Asel Karagazieva`;
 footer.appendChild(copyright);
 
-let skills=['JavaScript', 'HTML', 'GIT'];
+let skills=['JavaScript', 'HTML', 'Github', 'CSS'];
 // console.log(skills);
 let skillsSection=document.getElementById('skills');
 let skillsList=document.querySelector('ul');
@@ -39,12 +39,13 @@ leave_message.addEventListener('submit',function(e){
    messageSection.appendChild(newMessage);
 
     let removeButton=document.createElement('button')
+    removeButton.id="buttonremove";
     removeButton.innerHTML = 'remove';
     removeButton.type = 'button';
     messageSection.appendChild(removeButton)
     removeButton.addEventListener('click', (e) =>{
-        let entry= document.getElementById('messages').parentNode
-        entry.remove();
+    let entry= document.getElementById('messages').parentNode
+    entry.remove();
     })
 
     document.forms['leave_message'].reset()
