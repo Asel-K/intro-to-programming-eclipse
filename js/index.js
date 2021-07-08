@@ -19,6 +19,24 @@ for (i=0; i<skills.length; i++){
     skillsSection.appendChild(skill)
 }
 
+let githubRequest = new XMLHttpRequest ();
+const GITHUB_USERNAME = 'Asel-K'
+githubRequest.open("GET", `https://api.github.com/users/${GITHUB_USERNAME}/repos`);
+githubRequest.send(); 
+githubRequest.onload = function () {
+    let repositories = JSON.parse (this.response);
+    console.log ("response", repositories)
+
+let projectSection = document.getElementById ("projects");
+let projectList = projectSection.querySelector('ul')
+for(let i=0; i<repositories.length; i++){
+    let project = document.createElement('li');
+    project.innerHTML=`<a href=${`${repositories[i].clone_url}`}>${repositories[i].name}
+    </a>`
+    projectList.appendChild(project);
+}
+}
+
 let messageForm=document.getElementsByName('leave_message')
 leave_message.addEventListener('submit',function(e){
     e.preventDefault()
