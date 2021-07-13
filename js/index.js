@@ -19,24 +19,26 @@ for (i=0; i<skills.length; i++){
     skillsSection.appendChild(skill)
 }
 
-let githubRequest = new XMLHttpRequest ();
+
 const GITHUB_USERNAME = 'Asel-K'
-githubRequest.open("GET", `https://api.github.com/users/${GITHUB_USERNAME}/repos`);
-githubRequest.send(); 
-githubRequest.onload = function () {
-    let repositories = JSON.parse (this.response);
-    console.log ("response", repositories)
 
-let projectSection = document.getElementById ("projects");
-let projectList = projectSection.querySelector('ul')
-for(let i=0; i<repositories.length; i++){
-    let project = document.createElement('li');
-    project.innerHTML=`<a href=${`${repositories[i].clone_url}`}>${repositories[i].name}
-    </a>`
-    projectList.appendChild(project);
-}
-}
+//FETCHING API//
+fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
 
+    .then(response=> response.json())
+    .then(data=>repo(data))
+    function repo(data) {
+        let projectSection = document.getElementById ("projects");
+        let projectList = projectSection.querySelector('ul')
+        for(let i=0; i<data.length; i++){
+            let project = document.createElement('li');
+            project.innerHTML=`<a href=${`${data[i].clone_url}`}>${data[i].name} ${data[i].description}</a>`
+            projectList.appendChild(project)
+
+    }}
+
+
+//   leave message   
 let messageForm=document.getElementsByName('leave_message')
 leave_message.addEventListener('submit',function(e){
     e.preventDefault()
@@ -52,17 +54,17 @@ leave_message.addEventListener('submit',function(e){
     let messageSection = document.getElementById('messages');
     let messageList = document.querySelector('ul');
     let newMessage = document.createElement ('li');
-   newMessage.innerHTML=`<a href='mailto:asel.karagazieva@gmail.com'>${Name}</a>
+   newMessage.innerHTML =`<a href='mailto:asel.karagazieva@gmail.com'>${Name}</a>
    wrote <span>${Message}</span>`
    messageSection.appendChild(newMessage);
 
-    let removeButton=document.createElement('button')
-    removeButton.id="buttonremove";
+    let removeButton = document.createElement('button')
+    removeButton.id = "buttonremove";
     removeButton.innerHTML = 'remove';
     removeButton.type = 'button';
     messageSection.appendChild(removeButton)
-    removeButton.addEventListener('click', (e) =>{
-    let entry= document.getElementById('messages').parentNode
+    removeButton.addEventListener('click', (e) => {
+    let entry = document.getElementById('messages').parentNode
     entry.remove();
     })
 
