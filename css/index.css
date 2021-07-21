@@ -25,9 +25,6 @@
         0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
     /* General styles*/
-/* html {
-  scroll-behavior: smooth;
-} */
 
 body {
     background-color: var(--clr-light);
@@ -36,6 +33,7 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6; 
+    max-width: 100%;
   }
 
   section {
@@ -72,13 +70,13 @@ body {
 
 #buttonremove {
   display: inline-block;
-    padding: .5em 2.5em;
+    padding: .5em 1em;
     background: var(--clr-accent);
     color: var(--clr-dark);
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 2px;
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-reg);
     transition: transform 200ms ease-in-out;
 }
 .btn:hover,
@@ -147,6 +145,7 @@ body {
   font: var(--ff-primary);
 	color: #6b705c;
 	text-transform: uppercase;
+  justify-content: center;
 }
 .main-nav a:hover {
 	color: #093a58;
@@ -261,6 +260,10 @@ a {
   opacity: .5;
 }
 
+#projects ul{
+  display: flex;
+  justify-content: center;
+}
 #projects li {
   border: 1px solid var(--clr-light);
   display: inline-block;
@@ -304,7 +307,7 @@ color: var(--clr-accent);
   }
 }
 
-/* //leave message */
+/* leave message */
 #contact {
   background-color: var(--clr-dark);
   background-image: url(../css/grey\ bckgr.jpg);
@@ -354,27 +357,36 @@ color: var(--clr-accent);
 }
 
 /* left messages */
-ul {
+#messages {
+  background-color: var(--clr-dark);
+  background-image: url(../css/blue\ grey.jpg);
+  background-size: cover;
+  background-blend-mode: multiply; 
+  color: var(--clr-light);
+}
+
+#messages ul {
   display: flex;
+  flex-direction: column;
 }
 #messages li {
-  display: inline-block;
-  width: 50%;
-  padding: 30px;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  padding: 1rem 0;
 
 }
 #messages a {
   display: inline-block;
-  width: 30%;
+  width: fit-content;
   padding: 30px;
-  font-size: 18px;
+  color: var(--clr-accent);
+
 }
 #messages span{
   display: inline-block;
   width: fit-content;
   padding: 30px;
-  font-size: 18px;
 }
 
 
@@ -581,10 +593,58 @@ ul {
   }
   .main-nav {
     display: flex;
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 }
 
+@media (max-width: 375px) {
+  #projects li{
+    display: block;
+    width: 90%;
+  }
+  #projects ul{
+    display: contents;
+  }
 
+  #skills li {
+    display: block;
+    width: 90%; 
+  } 
+
+  #messages li,
+  #messages ul {
+    display: inline-block;
+    font-size: 1em; 
+    padding: -2px;
+    margin-left: -2em;
+  }
+  .wrapper .icon{
+    margin: 0 10px;
+  }
+
+} 
+@media (max-width: 414px) {
+  #projects li{
+    display: block;
+    width: 90%;
+  }
+  #projects ul{
+    display: contents;
+  }
+
+  #skills li {
+    display: block;
+    width: 90%; 
+  } 
+
+  #messages li,
+  #messages ul {
+    display: inline-block;
+    font-size: 1em; 
+    padding: -2px;
+    margin-left: -2em;
+  }
+
+} 
 
 
