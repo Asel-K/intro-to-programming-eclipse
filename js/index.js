@@ -38,48 +38,37 @@ fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
    
 
 
-// LEAVE MESSAGE   
-let messageForm=document.getElementsByName('leave_message')
-leave_message.addEventListener('submit',function(e){
-    e.preventDefault()
+//LEAVE MESSAGE
 
+let messageForm=document.getElementsByName('leave_message')
+leave_message.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    
     let Name=e.target.name.value
     let Email=e.target.email.value
     let Message=e.target.message.value
-
-
-
-    let messageSection = document.getElementById('messages');
-    let messageList = document.querySelector('ul');
-
-    if (messageSection.style.display=== 'none'){
-        messageSection.style.display = 'block'
-    }
-
-//create new message
-    let newMessage = document.createElement ('li');
-    newMessage.classList.add('list_item')
-   newMessage.innerHTML =`<a href='mailto:asel.karagazieva@gmail.com'>${Name}</a>
-   wrote <span>${Message}</span>`
-   messageSection.appendChild(newMessage);
-
-   //remove button
-    let removeButton = document.createElement('button')
-    removeButton.id = "buttonremove";
-    removeButton.innerText = "remove";
-    removeButton.type = 'button';
-    messageSection.appendChild(removeButton)
     
-    removeButton.addEventListener('click', (e) => {
-    let entry = document.getElementById('messages').parentNode
-
+    console.log(Name)
+    console.log(Email)
+    console.log(Message);
     
+    let newMessage = document.createElement('li');
+    newMessage.innerHTML=`<a href="mailto:${Email}">${Name}</a>
+    wrote :<span>${Message}</span>`
+    let messageSection = document.getElementById("messages");
+    let  messageList = messageSection.querySelector('ul')
 
+let removeButton= document.createElement("button")
+removeButton.id="buttonremove";
+removeButton.innerText = "remove";
+removeButton.type = "button";
+
+removeButton.addEventListener("click",(e)=> {
+    const entry = e.target.parentNode;
     entry.remove();
-    })
-
-    document.forms['leave_message'].reset()
 })
+newMessage.appendChild(removeButton);
 
-
-
+messageList.appendChild(newMessage);
+e.target.reset();
+})
